@@ -14,7 +14,14 @@
             <p id="dadJoke"></p><button></button>
         </div>
     </header>
-
+    <section id="weather">
+        <form action="/submit_zip_code" method="post">
+            <label for="zipCode">Enter your Zip Code:</label>
+            <input type="text" id="zipCode" name="zipCode" required>
+            
+            <button type="submit">Submit</button>
+        </form>
+    </section>
     <script src="script.js"></script>
   </body>
 </html>
