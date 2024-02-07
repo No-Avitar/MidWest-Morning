@@ -5,6 +5,26 @@
 //display on page load
 //add functionality to refresh button
 
+var dJKey = "3zB158Myo64nPMvQH+watQ==SGjGrrL2KLW7qDQy";
+var dJEl = document.getElementById('dadJoke');
+
+var limit = 1
+$.ajax({
+    method: 'GET',
+    url: 'https://api.api-ninjas.com/v1/dadjokes?limit=' + limit,
+    headers: { 'X-Api-Key': dJKey},
+    contentType: 'application/json',
+    success: function(result) {
+        console.log(result);
+        dJEl.textContent = result[0].joke;
+    },
+    error: function ajaxError(jqXHR) {
+        console.error('Error: ', jqXHR.responseText);
+    }
+
+});
+
+
 //## MAYO API PULL FUNCTIONALITY ##
 // - ADD API key and store as a variable
 // Get best URL for pull using postman
