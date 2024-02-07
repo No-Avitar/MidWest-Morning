@@ -5,15 +5,29 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" type="text/css" href="./style.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
   </head>
   <body>
     <header>
-        <div id="topRow">
-            <img id="Logo" src="/assets/Screenshot 2024-02-01 213809.png" alt="OPE.com Logo"></img>
+        <div id="topRow" class="navBar">
+            <img id="Logo" class="logo" src="/assets/Screenshot 2024-02-01 213809.png" alt="OPE.com Logo"></img>
             <p id="dayAndTime">test</p>
             <p id="dadJoke">test</p><button id="dadJokeBtn">Heard It</button>
         </div>
     </header>
+    <style>
+      .navBar {
+        display: flex;
+        /* background-color: blueviolet; */
+        align-items: center;
+      }
+      .logo {
+        /* background-color: white; */
+        /* margin-left: 10px; */
+        border-radius: 20px;
+        margin: 10px 20px 10px 15px;
+      }
+    </style>
     <section id="weather">
       <!-- ###TODO Accept user input as city or Zip code -->
       <!-- ###TODO remove form element and add local Storage -->
