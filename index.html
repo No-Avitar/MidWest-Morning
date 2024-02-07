@@ -19,16 +19,13 @@
     <style>
       .navBar {
         display: flex;
-        /* background-color: rgb(135 206 235 / 44%); */
         align-items: center;
         justify-content: space-between;
         font-size: 18px;
-        /* background: linear-gradient (#87ceeb70, white); */
         background: linear-gradient(skyblue, white);
       }
       .logo {
         /* background-color: white; */
-        /* margin-left: 10px; */
         border-radius: 20px;
         margin: 10px 20px 10px 25px;
         width: 125px;
@@ -47,22 +44,80 @@
       .dadJoke {
         width: 40%;
       }
+      #weather {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        /* background: linear-gradient(white, skyblue); */
+        font-size: 20px;
+        height: 90px;
+      }
+      #city {
+        border-radius: 10px;
+        margin: 0px 15px;
+        border-color: black;
+        border-width: 2px;
+        border-radius: 7px;
+        padding-left: 10px;
+      }
+      #weatherBtn {
+        border-color: black;
+        border-width: 2px;
+        border-radius: 10px;
+        padding: 4px 9px;
+        background-color: rgb(0 0 0 / 7%);
+      }
+      #weatherBox {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-color: black;
+        border-width: 3px;
+        border-radius: 30px;
+        margin: 0px 25px;
+        flex-direction: column;
+      }
+      #location {
+        display: flex;
+        justify-content: center;
+        align-self: stretch;
+        text-align: center;
+        font-size: 30px;
+        font-weight: bold;
+        padding: 5px 0px;
+        background: linear-gradient(navy, #49b2fe);
+        color: white;
+        border-radius: 27px 27px 0px 0px;
+      }
+      #weatherContent {
+        display: flex;
+        flex-direction: row;
+      }
+      #conditions {
+        display: block;
+      }
+      #weatherGif {
+        width: 250px;
+      }
     </style>
     <section id="weather">
       <!-- ###TODO Accept user input as city or Zip code -->
       <!-- ###TODO remove form element and add local Storage -->
       <label for="city">Enter City:</label>
       <input type="text" id="city" name="city" required> 
-      <button onclick="saveCity(); getWeatherAPI()">Search</button>
+      <button id="weatherBtn" onclick="saveCity(); getWeatherAPI()">Search</button>
     </section>
     <section id="weatherBox">
-      <h2 id="location">Enter a city name and click "Search"</h2>
+      <h2 id="location">location and time</h2>
+      <div id="weatherContent">
       <ul id="conditions">
-          <li><img id="weatherGif" src="" alt="icon"><img></li>
-          <li id="temperature"></li>
-          <li id="wind"></li>
-          <li id="humidity"></li>
+        <li id="temperature">temperature</li>
+        <li id="wind">wind speed</li>
+        <li id="humidity">humidity</li>
+        <li><img></li>
       </ul>
+      <p><img id="weatherGif" src="/assets/Screenshot 2024-02-05 210801.png"><img></p>
+      </div>
     </section>
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="script.js"></script>

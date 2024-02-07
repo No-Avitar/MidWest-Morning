@@ -97,4 +97,4 @@ cityHumidity.textContent = "Humidity: " + data.main.humidity + "%";
 });
 }
 
-$('#dayAndTime').text(dayjs().format('dddd, MMMM D'))
+$('#dayAndTime').text(dayjs().format('dddd, MMMM D, h:mm A'))
