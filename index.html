@@ -47,12 +47,18 @@
     <section id="weather">
       <!-- ###TODO Accept user input as city or Zip code -->
       <!-- ###TODO remove form element and add local Storage -->
-        <form action="/submit_zip_code" method="post">
-            <label for="zipCode">Enter your Zip Code:</label>
-            <input type="text" id="zipCode" name="zipCode" required>
-            
-            <button type="submit">Submit</button>
-        </form>
+      <label for="city">Enter City:</label>
+      <input type="text" id="city" name="city" required> 
+      <button onclick="saveCity(); getWeatherAPI()">Search</button>
+    </section>
+    <section id="weatherBox">
+      <h2 id="location">Enter a city name and click "Search"</h2>
+      <ul id="conditions">
+          <li><img id="weatherGif" src="" alt="icon"><img></li>
+          <li id="temperature"></li>
+          <li id="wind"></li>
+          <li id="humidity"></li>
+      </ul>
     </section>
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="script.js"></script>
