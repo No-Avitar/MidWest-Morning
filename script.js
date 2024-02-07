@@ -66,7 +66,7 @@ var cityHeader = document.getElementById("location");
 var cityTemperature = document.getElementById("temperature");
 var cityWind = document.getElementById("wind");
 var cityHumidity = document.getElementById("humidity");
-var card0Icon = document.getElementById("weatherGif");
+var weatherCodeGif = document.getElementById("weatherGif");
 
 
 fetch(queryURL)
@@ -92,7 +92,12 @@ var cleanWind = parseInt(windMPH);
 cityWind.textContent = "Wind: " + cleanWind + " MPH";
 cityHumidity.textContent = "Humidity: " + data.main.humidity + "%";
 
-
-
+var weatherIconId = data.weather[0].icon;
+console.log(weatherIconId);
+if (weatherIconId == "01d"){
+    weatherCodeGif.src = "./";
+} else if (weatherIconId == "01n") {
+    weatherCodeGif.src = "./assets/weather_gifs/01n.gif"; 
+}
 });
 }
