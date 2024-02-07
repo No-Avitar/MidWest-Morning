@@ -95,10 +95,42 @@ cityHumidity.textContent = "Humidity: " + data.main.humidity + "%";
 var weatherIconId = data.weather[0].icon;
 console.log(weatherIconId);
 if (weatherIconId == "01d"){
-    weatherCodeGif.src = "./";
+    weatherCodeGif.src = "./assets/weather_gifs/01d.gif";
 } else if (weatherIconId == "01n") {
     weatherCodeGif.src = "./assets/weather_gifs/01n.gif"; 
-}
+} else if (weatherIconId == "02d") {
+    weatherCodeGif.src = "./assets/weather_gifs/02d.gif"; 
+} else if (weatherIconId == "02n") {
+    weatherCodeGif.src = "./assets/weather_gifs/02n.gif"; 
+} else if (weatherIconId == "03d") {
+    weatherCodeGif.src = "./assets/weather_gifs/03d.gif"; 
+} else if (weatherIconId == "03n") {
+    weatherCodeGif.src = "./assets/weather_gifs/03n.gif"; 
+} else if (weatherIconId == "04d") {
+    weatherCodeGif.src = "./assets/weather_gifs/04d.gif"; 
+} else if (weatherIconId == "04n") {
+    weatherCodeGif.src = "./assets/weather_gifs/04n.gif"; 
+} else if (weatherIconId == "09d") {
+    weatherCodeGif.src = "./assets/weather_gifs/09d.gif"; 
+} else if (weatherIconId == "09n") {
+    weatherCodeGif.src = "./assets/weather_gifs/09n.gif"; 
+} else if (weatherIconId == "10d") {
+    weatherCodeGif.src = "./assets/weather_gifs/10d.gif"; 
+} else if (weatherIconId == "10n") {
+    weatherCodeGif.src = "./assets/weather_gifs/10n.gif"; 
+} else if (weatherIconId == "11d") {
+    weatherCodeGif.src = "./assets/weather_gifs/11d.gif"; 
+} else if (weatherIconId == "11n") {
+    weatherCodeGif.src = "./assets/weather_gifs/11m.gif"; 
+} else if (weatherIconId == "13d") {
+    weatherCodeGif.src = "./assets/weather_gifs/13d.gif"; 
+} else if (weatherIconId == "13n") {
+    weatherCodeGif.src = "./assets/weather_gifs/13n.gif"; 
+} else if (weatherIconId == "50d") {
+    weatherCodeGif.src = "./assets/weather_gifs/50d.gif"; 
+} else if (weatherIconId == "50n") {
+    weatherCodeGif.src = "./assets/weather_gifs/50n.gif"; 
+} 
 });
 }
 
