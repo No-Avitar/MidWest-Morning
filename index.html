@@ -12,7 +12,7 @@
         <div id="topRow" class="navBar">
             <img id="Logo" class="logo" src="/assets/Screenshot 2024-02-01 213809.png" alt="OPE.com Logo"></img>
             <p id="dayAndTime">test</p>
-            <p id="dadJoke">test</p><button id="dadJokeBtn">Heard It</button>
+            <p class="dadJoke" id="dadJoke"></p><button class="dadJokeBtn" id="dadJokeBtn">Heard It</button>
         </div>
     </header>
     <style>
@@ -20,12 +20,28 @@
         display: flex;
         /* background-color: blueviolet; */
         align-items: center;
+        justify-content: space-between;
+        font-size: 18px;
+
       }
       .logo {
         /* background-color: white; */
         /* margin-left: 10px; */
         border-radius: 20px;
-        margin: 10px 20px 10px 15px;
+        margin: 10px 20px 10px 25px;
+        width: 125px;
+      }
+      .dadJokeBtn {
+        justify-self: right;
+        border-color: black;
+        border-width: 2px;
+        margin-right: 25px;
+        border-radius: 10px;
+        font-size: 22px;
+        padding: 4px 9px;
+      }
+      .dadJoke {
+        max-width: 40%;
       }
     </style>
     <section id="weather">
