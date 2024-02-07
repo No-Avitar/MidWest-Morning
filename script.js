@@ -134,4 +134,4 @@ if (weatherIconId == "01d"){
 });
 }
 
-$('#dayAndTime').text(dayjs().format('dddd, MMMM D'))
+$('#dayAndTime').text(dayjs().format('dddd, MMMM D, h:mm A'))
