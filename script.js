@@ -59,3 +59,5 @@ fetch(queryURL)
 console.log(data)
 });
 }
+
+$('#dayAndTime').text(dayjs().format('dddd, MMMM D'))

@@ -5,24 +5,26 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" type="text/css" href="./style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1.11.3/dayjs.min.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
   <body>
     <header>
         <div id="topRow" class="navBar">
             <img id="Logo" class="logo" src="/assets/Screenshot 2024-02-01 213809.png" alt="OPE.com Logo"></img>
-            <p id="dayAndTime">test</p>
+            <p id="dayAndTime"></p>
             <p class="dadJoke" id="dadJoke"></p><button class="dadJokeBtn" id="dadJokeBtn">Heard It</button>
         </div>
     </header>
     <style>
       .navBar {
         display: flex;
-        /* background-color: blueviolet; */
+        /* background-color: rgb(135 206 235 / 44%); */
         align-items: center;
         justify-content: space-between;
         font-size: 18px;
-
+        /* background: linear-gradient (#87ceeb70, white); */
+        background: linear-gradient(skyblue, white);
       }
       .logo {
         /* background-color: white; */
@@ -39,9 +41,11 @@
         border-radius: 10px;
         font-size: 22px;
         padding: 4px 9px;
+        /* background-color: rgb(135 206 235 / 20%); */
+        background-color: rgb(0 0 0 / 7%);
       }
       .dadJoke {
-        max-width: 40%;
+        width: 40%;
       }
     </style>
     <section id="weather">
