@@ -78,6 +78,20 @@
         flex-direction: column;
         max-width: 50%;
       }
+      #placeholder {
+        display: flex;
+        align-items: center;
+        border-color: black;
+        border-width: 3px;
+        border-radius: 30px;
+        margin: 0px 25px;
+        flex-direction: column;
+        max-width: 50%;
+        background: linear-gradient(navy, #49b2fe);
+        font-size: 30px;
+        color: white;
+        font-weight: bold;
+      }
       #location {
         display: flex;
         justify-content: center;
@@ -208,7 +222,8 @@
       <input type="text" id="city" name="city" required> 
       <button id="weatherBtn" onclick="saveCity(); getWeatherAPI()">Search</button>
     </section>
-    <section id="weatherBox">
+    <h2 id="placeholder" style="display: flex;">placeholder</h2>
+    <section id="weatherBox" style="display: none;">
       <h2 id="location">location and time</h2>
       <div id="weatherContent">
       <ul id="conditions">

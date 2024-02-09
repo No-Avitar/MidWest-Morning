@@ -68,7 +68,8 @@ var cityWind = document.getElementById("wind");
 var cityHumidity = document.getElementById("humidity");
 var cityDescription = document.getElementById("conditionsDescription");
 var weatherCodeGif = document.getElementById("weatherGif");
-
+var weatherBox = document.getElementById("weatherBox");
+var weatherPlaceholder = document.getElementById("placeholder");
 
 fetch(queryURL)
 .then(function (response){
@@ -97,7 +98,8 @@ var weatherDescriptionId = data.weather[0].description;
 //console.log(weatherDescriptionId);
 
 cityDescription.textContent = "Conditions: " + weatherDescriptionId;
-
+weatherBox.style.display = 'flex'
+weatherPlaceholder.style.display = 'none'
 var weatherIconId = data.weather[0].icon;
 //console.log(weatherIconId);
 if (weatherIconId == "01d"){
