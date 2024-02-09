@@ -15,7 +15,7 @@ $.ajax({
     headers: { 'X-Api-Key': dJKey},
     contentType: 'application/json',
     success: function(result) {
-        console.log(result);
+        //console.log(result);
         dJEl.textContent = result[0].joke;
     },
     error: function ajaxError(jqXHR) {
@@ -66,6 +66,7 @@ var cityHeader = document.getElementById("location");
 var cityTemperature = document.getElementById("temperature");
 var cityWind = document.getElementById("wind");
 var cityHumidity = document.getElementById("humidity");
+var cityDescription = document.getElementById("conditionsDescription");
 var weatherCodeGif = document.getElementById("weatherGif");
 
 
@@ -74,7 +75,7 @@ fetch(queryURL)
     return response.json();
 })
 .then(function (data){
-console.log(data)
+//console.log(data)
 
 
 var weatherDate = data.dt;
@@ -92,8 +93,13 @@ var cleanWind = parseInt(windMPH);
 cityWind.textContent = "Wind: " + cleanWind + " MPH";
 cityHumidity.textContent = "Humidity: " + data.main.humidity + "%";
 
+var weatherDescriptionId = data.weather[0].description;
+//console.log(weatherDescriptionId);
+
+cityDescription.textContent = "Conditions: " + weatherDescriptionId;
+
 var weatherIconId = data.weather[0].icon;
-console.log(weatherIconId);
+//console.log(weatherIconId);
 if (weatherIconId == "01d"){
     weatherCodeGif.src = "./assets/weather_gifs/01d.gif";
 } else if (weatherIconId == "01n") {
