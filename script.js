@@ -20,13 +20,14 @@ function autoChangeSlide() {
 setInterval(autoChangeSlide, 5000);
 
 showSlide(slideIndex);
-//## DAD JOKE API PULL FUNCTIONALITY ##
-// - ADD API key and store as a variable
-// create function to house API pull
-// push response to html with setTextContent in HTML element id="dadJoke"
-//display on page load
-//add functionality to refresh button
+
+
 $('#dayAndTime').text(dayjs().format('dddd, MMMM D, h:mm A'))
+
+//     ###############################
+//###### DAD JOKE API FUNCTIONALITY ######
+//     ###############################
+
 var dJKey = "3zB158Myo64nPMvQH+watQ==SGjGrrL2KLW7qDQy";
 var dJEl = document.getElementById('dadJoke');
 
@@ -44,6 +45,11 @@ $.ajax({
         console.error('Error: ', jqXHR.responseText);
     }
 
+});
+
+$(document).ready(function(){
+    city = localStorage.getItem("userCity");
+    getWeatherAPI();
 });
 
 // ##################################
@@ -104,8 +110,10 @@ var weatherPlaceholder = document.getElementById("placeholder");
             //console.log(weatherDescriptionId);
 
             cityDescription.textContent = "Conditions: " + weatherDescriptionId;
-weatherBox.style.display = 'flex'
-weatherPlaceholder.style.display = 'none'
+
+                weatherBox.style.display = 'flex'
+                weatherPlaceholder.style.display = 'none'
+
             var weatherIconId = data.weather[0].icon;
             //console.log(weatherIconId);
             if (weatherIconId == "01d") {
@@ -146,44 +154,135 @@ weatherPlaceholder.style.display = 'none'
                 weatherCodeGif.src = "./assets/weather_gifs/50n.gif";
             }
             return data.coord
-        })
-        .then(function(coords){
-            console.log(coords.lat);
-            console.log(coords.lon);
-            
-            const queryLakeURL = "http://services.dnr.state.mn.us/api/lakefinder/by_point/v1/?lat=" + coords.lat + "&lon=" + coords.lon + "&radius=16093.44";
+        });
 
-            console.log(queryLakeURL);
 
-            fetch(queryLakeURL)
-            .then(function(response2) {
-                //console.log(response2);
-                return response2.json();
-                
-            })
-            .then(function (data2){
-                console.log(data2)  
-                
-                
-            })
+//         .then(function(coords){
+                        
+//             const queryLakeURL = "http://services.dnr.state.mn.us/api/lakefinder/by_point/v1/?lat=47.4736&lon=-94.8803&radius=16093.44";
 
-        })
+//             console.log(queryLakeURL);
+
+//             fetch(queryLakeURL)
+//             .then(function(response2) {
+//                 //console.log(response2);
+//                 return response2.json();
+                
+//             })
+//             .then(function (data2){
+//                 console.log(data2)  
+                
+//                 let 
+                
+//             })
+
+//         });
 
         
-}
+ }
 
-//## LAKE FINDER API PULL FUNCTIONALITY ##
-// add query URL and story in variable
-//Come up with solution to bridge gap between lat/long and zip or city
-// create function to house API pull
-//Create HTML elements with relevant ids for Lake Finder section
-// push response to html with setTextContent in HTML element
-//display on user location input, load on page load when user location is stored locally
+ function getFishAPI() {
+    const queryLakeURL = "http://services.dnr.state.mn.us/api/lakefinder/by_point/v1/?lat=47.4736&lon=-94.8803&radius=16093.44";
+
+    fetch(queryLakeURL)
+    .then(function(response2){
+        return response2.json();
+    })
+    .then(function(data2){
+        //console.log(data2);
+        var fishImage = document.getElementById("fishPic");
+        var fishNameId = document.getElementById("fishName");
+        
+        let fishNameArray = data2.results[0].fishSpecies;
+        //console.log(fishNameArray);
+        let fishNumber = Math.floor(Math.random() * fishNameArray.length);
+        
+        console.log(fishNumber);
+
+        fishNameId.textContent = data2.results[0].fishSpecies[fishNumber];
+        
+        if (fishNumber == 0) {
+            fishImage.src = "./assets/fishies/black bullhead.gif";
+        } else if (fishNumber == 1) {
+            fishImage.src = "./assets/fishies/black crappie.jpg";
+        } else if (fishNumber == 2) {
+            fishImage.src = "./assets/fishies/bluegill.jpg";
+        } else if (fishNumber == 3) {
+            fishImage.src = "./assets/fishies/brown bullhead.jpg";
+        } else if (fishNumber == 4) {
+            fishImage.src = "./assets/fishies/burbot.jpg";
+        } else if (fishNumber == 5) {
+            fishImage.src = "./assets/fishies/hybrid sunfish.jpg";
+        } else if (fishNumber == 6) {
+            fishImage.src = "./assets/fishies/largemouth bass.jpg";
+        } else if (fishNumber == 7) {
+            fishImage.src = "./assets/fishies/northern pike.jpg";
+        } else if (fishNumber == 8) {
+            fishImage.src = "./assets/fishies/pumpkinseed.jpg";
+        } else if (fishNumber == 9) {
+            fishImage.src = "./assets/fishies/rock bass.jpg";
+        } else if (fishNumber == 10) {
+            fishImage.src = "./assets/fishies/smallmouth bass.jpg";
+        } else if (fishNumber == 11) {
+            fishImage.src = "./assets/fishies/sunfish.jpg";
+        } else if (fishNumber == 12) {
+            fishImage.src = "./assets/fishies/tullibee (cisco).jpg";
+        } else if (fishNumber == 13) {
+            fishImage.src = "./assets/fishies/walleye.png";
+        } else if (fishNumber == 14) {
+            fishImage.src = "./assets/fishies/yellow bullhead.png";
+        } else if (fishNumber == 15) {
+            fishImage.src = "./assets/fishies/yellow perch.jpg";
+        } else if (fishNumber == 16) {
+            fishImage.src = "./assets/fishies/bowfin (dogfish).gif";
+        } else if (fishNumber == 17) {
+            fishImage.src = "./assets/fishies/shorthead redhorse.jpg";
+        } else if (fishNumber == 18) {
+            fishImage.src = "./assets/fishies/white sucker.gif";
+        } else if (fishNumber == 19) {
+            fishImage.src = "./assets/fishies/try_again.gif";
+            fishNameId.textContent = "Try Again"
+        } else if (fishNumber == 20) {
+            fishImage.src = "./assets/fishies/try_again.gif";
+            fishNameId.textContent = "Try Again"
+        } else if (fishNumber == 21) {
+            fishImage.src = "./assets/fishies/try_again.gif";
+            fishNameId.textContent = "Try Again"
+        } else if (fishNumber == 22) {
+            fishImage.src = "./assets/fishies/try_again.gif";
+            fishNameId.textContent = "Try Again"
+        } else if (fishNumber == 23) {
+            fishImage.src = "./assets/fishies/try_again.gif";
+            fishNameId.textContent = "Try Again"
+        } else if (fishNumber == 24) {
+            fishImage.src = "./assets/fishies/try_again.gif";
+            fishNameId.textContent = "Try Again"
+        } else if (fishNumber == 25) {
+            fishImage.src = "./assets/fishies/common carp.gif";
+        } else if (fishNumber == 26) {
+            fishImage.src = "./assets/fishies/try_again.gif";
+            fishNameId.textContent = "Try Again"
+        } else if (fishNumber == 27) {
+            fishImage.src = "./assets/fishies/try_again.gif";
+            fishNameId.textContent = "Try Again"
+        } else if (fishNumber == 28) {
+            fishImage.src = "./assets/fishies/try_again.gif";
+            fishNameId.textContent = "Try Again"
+        } else if (fishNumber == 29) {
+            fishImage.src = "./assets/fishies/try_again.gif";
+            fishNameId.textContent = "Try Again"
+        } else if (fishNumber == 30) {
+            fishImage.src = "./assets/fishies/try_again.gif";
+            fishNameId.textContent = "Try Again"
+        } else if (fishNumber == 31) {
+            fishImage.src = "./assets/fishies/try_again.gif";
+            fishNameId.textContent = "Try Again"
+        }
+        
 
 
-console.log(latitude);
-console.log(longitude);
+        //fishNameId.textContent = "burbot";
+        //fishImage.src = "./assets/fishies/burbot.jpg"
 
-
-
-
+    })
+ };
