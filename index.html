@@ -110,6 +110,82 @@
         margin-bottom: 14px;
       }
 
+
+      #mayoModule{
+    border: 3px solid black;
+    max-width: 375px;
+}
+#mayoHeader{
+    display: flex;
+    justify-content: center;
+}
+#mayoBox{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    max-width: 300px;
+}
+
+.mayo_cards {
+    position: relative;
+    max-width: 800px;
+    margin: auto;
+    
+  }
+  
+  .slide {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 3px;
+    width: 250px;
+  }
+  
+ 
+  .mayo_text {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    width: 100%;
+    padding: 3px;
+    border-radius: 5px;
+    padding-left: 20px;
+    font-size: large;
+    display: block;
+    margin: auto;
+    }
+ 
+  .next{
+    margin-left: 15px;
+  }
+  .prev, .next {
+    cursor: pointer;
+    border: none;
+    font-size: 30px;
+    background-color: transparent;
+  }
+.mayo_cards img {
+    height: 200px;
+    width: auto;
+    padding-left: 50px;
+    
+}
+a {
+    font-size: 20px;
+    color: white;
+    display: flex;
+    justify-content: center;
+}
+a:link{
+    text-decoration: none;
+}
+a:visited{
+    text-decoration: none;
+}
+a:hover{
+    text-decoration: underline;
+}
+a:active{
+    text-decoration: underline;
+}
     </style>
     <section id="weather">
       <!-- ###TODO Accept user input as city or Zip code -->
@@ -130,6 +206,53 @@
       <p><img id="weatherGif" src=""><img></p>
       </div>
     </section>
+    <section id="mayoModule">
+      <h3 id="mayoHeader">Mayo Price Tracker</h3>
+      <div id="mayoBox">
+          <button class="prev" onclick="changeSlide(-1)">⬅️</button>
+          <div class="mayo_cards">
+              <div class="slide">
+                  <img src="./assets/mayo_pics/Hellmans.png" alt="Hellman's Mayo">
+                  <div class="mayo_text">
+                      <p>Hellman's Mayonnaise</p>
+                      <a
+                          href="https://www.target.com/p/hellmann-s-mayonnaise-real-30oz/-/A-13028016#lnk=sametab">$6.19</a>
+                  </div>
+              </div>
+
+              <div class="slide">
+                  <img src="./assets/mayo_pics/Dukes_30oz.png" alt="Dukes Mayo">
+                  <div class="mayo_text">
+                      <p>Duke's Mayonnaise</p>
+                      <a
+                          href="https://www.target.com/p/duke-39-s-real-smooth-38-creamy-mayonnaise-30-fl-oz/-/A-14776644#lnk=sametab">$4.99</a>
+                  </div>
+              </div>
+
+              <div class="slide">
+                  <img src="./assets/mayo_pics/Kraft_Mayo.png" alt="Kraft Mayo">
+                  <div class="mayo_text">
+                      <p>Kraft Real Mayonnaise</p>
+                      <a
+                          href="https://www.target.com/p/kraft-real-mayonnaise-30-fl-oz/-/A-12946394#lnk=sametab">$4.99</a>
+                  </div>
+              </div>
+
+              <div class="slide">
+                  <img src="./assets/mayo_pics/Market_Pantry_30oz.png" alt="Market Pantry Mayo">
+                  <div class="mayo_text">
+                      <p>Market Pantry Mayonnaise</p>
+                      <a
+                          href="https://www.target.com/p/mayonnaise-30oz-market-pantry-8482/-/A-13007982#lnk=sametab">$3.39</a>
+                  </div>
+              </div>
+
+
+          </div>
+
+          <button class="next" onclick="changeSlide(1)">➡️</button>
+      </div>
+  </section>
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="script.js"></script>
   </body>
