@@ -4,7 +4,7 @@
 // push response to html with setTextContent in HTML element id="dadJoke"
 //display on page load
 //add functionality to refresh button
-
+$('#dayAndTime').text(dayjs().format('dddd, MMMM D, h:mm A'))
 var dJKey = "3zB158Myo64nPMvQH+watQ==SGjGrrL2KLW7qDQy";
 var dJEl = document.getElementById('dadJoke');
 
@@ -52,7 +52,8 @@ function getWeatherAPI() {
     var cityHumidity = document.getElementById("humidity");
     var cityDescription = document.getElementById("conditionsDescription");
     var weatherCodeGif = document.getElementById("weatherGif");
-
+var weatherBox = document.getElementById("weatherBox");
+var weatherPlaceholder = document.getElementById("placeholder");
 
     fetch(queryURL)
         .then(function (response) {
@@ -81,7 +82,8 @@ function getWeatherAPI() {
             //console.log(weatherDescriptionId);
 
             cityDescription.textContent = "Conditions: " + weatherDescriptionId;
-
+weatherBox.style.display = 'flex'
+weatherPlaceholder.style.display = 'none'
             var weatherIconId = data.weather[0].icon;
             //console.log(weatherIconId);
             if (weatherIconId == "01d") {
@@ -162,7 +164,7 @@ console.log(longitude);
 
 
 
-$('#dayAndTime').text(dayjs().format('dddd, MMMM D, h:mm A'))
+
 
 let slideIndex = 0;
 const slides = document.querySelectorAll('.slide');
