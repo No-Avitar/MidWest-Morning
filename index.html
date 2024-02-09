@@ -12,7 +12,7 @@
     <header>
         <div id="topRow" class="">
             <img id="Logo" class="" src="/assets/Screenshot 2024-02-01 213809.png" alt="OPE.com Logo"></img>
-            <p id="dayAndTime"></p>
+            <p class="" id="dayAndTime"></p>
             <p class="" id="dadJoke"></p><button class="" id="dadJokeBtn">Heard It</button>
         </div>
     </header>
@@ -42,7 +42,7 @@
         background-color: rgb(0 0 0 / 7%);
       }
       #dadJoke {
-        width: 40%;
+        max-width: 40%;
       }
       #weather {
         display: flex;
@@ -103,11 +103,15 @@
         margin-right: 10px;
       }
       #weatherGif {
-        max-height: 150px;
+        margin-top: 10px;
+        max-height: 160px;
       }
       #wind {
         margin-top: 14px;
         margin-bottom: 14px;
+      }
+      #conditionsDescription {
+        margin-top: 14px;
       }
 
       #mayoModule{
