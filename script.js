@@ -81,7 +81,7 @@ var weatherDate = data.dt;
 //console.log(weatherDate);
 var convertDate = new Date(weatherDate * 1000);
 var cleanDate = convertDate.toDateString();
-cityHeader.textContent = data.name + ": " + cleanDate;
+cityHeader.textContent = "Current Weather in " + data.name;
 var tempKelvin = data.main.temp;
 var tempFarenheit = (tempKelvin - 273.15) * 9 / 5 + 32;
 var cleanTempFarenheit = parseInt(tempFarenheit);
