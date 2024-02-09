@@ -135,3 +135,26 @@ if (weatherIconId == "01d"){
 }
 
 $('#dayAndTime').text(dayjs().format('dddd, MMMM D, h:mm A'))
+
+let slideIndex = 0;
+const slides = document.querySelectorAll('.slide');
+
+function showSlide(n) {
+  slides.forEach(slide => slide.style.display = 'none');
+  if (n >= slides.length) slideIndex = 0;
+  if (n < 0) slideIndex = slides.length - 1;
+  slides[slideIndex].style.display = 'block';
+}
+
+function changeSlide(n) {
+  slideIndex += n;
+  showSlide(slideIndex);
+}
+
+function autoChangeSlide() {
+  changeSlide(1);
+}
+
+setInterval(autoChangeSlide, 5000);
+
+showSlide(slideIndex);
