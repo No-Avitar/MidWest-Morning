@@ -4,7 +4,7 @@
 // push response to html with setTextContent in HTML element id="dadJoke"
 //display on page load
 //add functionality to refresh button
-
+$('#dayAndTime').text(dayjs().format('dddd, MMMM D, h:mm A'))
 var dJKey = "3zB158Myo64nPMvQH+watQ==SGjGrrL2KLW7qDQy";
 var dJEl = document.getElementById('dadJoke');
 
@@ -164,7 +164,7 @@ console.log(longitude);
 
 
 
-$('#dayAndTime').text(dayjs().format('dddd, MMMM D, h:mm A'))
+
 
 let slideIndex = 0;
 const slides = document.querySelectorAll('.slide');
