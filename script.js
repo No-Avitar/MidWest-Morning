@@ -238,39 +238,39 @@ var weatherPlaceholder = document.getElementById("placeholder");
         } else if (fishNumber == 18) {
             fishImage.src = "./assets/fishies/white sucker.gif";
         } else if (fishNumber == 19) {
-            fishImage.src = "./assets/fishies/try_again.gif";
+            fishImage.src = "./assets/fishies/try_again_bench.gif";
             fishNameId.textContent = "Try Again"
         } else if (fishNumber == 20) {
-            fishImage.src = "./assets/fishies/try_again.gif";
+            fishImage.src = "./assets/fishies/try_again_boat.gif";
             fishNameId.textContent = "Try Again"
         } else if (fishNumber == 21) {
-            fishImage.src = "./assets/fishies/try_again.gif";
+            fishImage.src = "./assets/fishies/try_again_fall.gif";
             fishNameId.textContent = "Try Again"
         } else if (fishNumber == 22) {
-            fishImage.src = "./assets/fishies/try_again.gif";
+            fishImage.src = "./assets/fishies/try_again_ice.gif";
             fishNameId.textContent = "Try Again"
         } else if (fishNumber == 23) {
-            fishImage.src = "./assets/fishies/try_again.gif";
+            fishImage.src = "./assets/fishies/try_again_kid.gif";
             fishNameId.textContent = "Try Again"
         } else if (fishNumber == 24) {
-            fishImage.src = "./assets/fishies/try_again.gif";
+            fishImage.src = "./assets/fishies/try_again_nose.gif";
             fishNameId.textContent = "Try Again"
         } else if (fishNumber == 25) {
             fishImage.src = "./assets/fishies/common carp.gif";
         } else if (fishNumber == 26) {
-            fishImage.src = "./assets/fishies/try_again.gif";
+            fishImage.src = "./assets/fishies/try_again_pants.gif";
             fishNameId.textContent = "Try Again"
         } else if (fishNumber == 27) {
-            fishImage.src = "./assets/fishies/try_again.gif";
+            fishImage.src = "./assets/fishies/try_again_pole.gif";
             fishNameId.textContent = "Try Again"
         } else if (fishNumber == 28) {
-            fishImage.src = "./assets/fishies/try_again.gif";
+            fishImage.src = "./assets/fishies/try_again_sheep.gif";
             fishNameId.textContent = "Try Again"
         } else if (fishNumber == 29) {
-            fishImage.src = "./assets/fishies/try_again.gif";
+            fishImage.src = "./assets/fishies/try_again_snake.gif";
             fishNameId.textContent = "Try Again"
         } else if (fishNumber == 30) {
-            fishImage.src = "./assets/fishies/try_again.gif";
+            fishImage.src = "./assets/fishies/try_again_tree.gif";
             fishNameId.textContent = "Try Again"
         } else if (fishNumber == 31) {
             fishImage.src = "./assets/fishies/try_again.gif";
