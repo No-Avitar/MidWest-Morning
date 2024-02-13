@@ -1,363 +1,399 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>MidWest Morning</title>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" type="text/css" href="./style.css" />
-    <script src="https://cdn.jsdelivr.net/npm/dayjs@1.11.3/dayjs.min.js"></script>
-    <script src="https://cdn.tailwindcss.com"></script>
-  </head>
-  <body>
-    <header>
-        <div id="topRow" class="">
-            <img id="Logo" class="" src="./assets/Screenshot 2024-02-01 213809.png" alt="OPE.com Logo"></img>
-            <p class="" id="dayAndTime"></p>
-            <p class="" id="dadJoke"></p>
-            <button class="" id="dadJokeBtn">Heard It</button>
-        </div>
-    </header>
-    <style>
-      #topRow {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        align-items: center;
-        justify-content: space-evenly;
-        font-size: 18px;
-        background: linear-gradient(skyblue, white);
-      }
-      #Logo {
-        /* background-color: white; */
-        border-radius: 20px;
-        margin: 10px 20px 10px 25px;
-        width: 125px;
-      }
-      #dadJokeBtn {
-        justify-self: right;
-        border-color: black;
-        border-width: 2px;
-        margin-right: 25px;
-        border-radius: 10px;
-        font-size: 15px;
-        padding: 4px 9px;
-        /* background-color: rgb(135 206 235 / 20%); */
-        background-color: rgb(0 0 0 / 7%);
-      }
-      #dadJoke {
-        max-width: 40%;
-      }
-      #weather {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        /* background: linear-gradient(white, skyblue); */
-        font-size: 20px;
-        height: 90px;
-      }
-      #city {
-        border-radius: 10px;
-        margin: 0px 15px;
-        border-color: black;
-        border-width: 2px;
-        border-radius: 7px;
-        /* padding: 4px 10px; */
-      }
-      #weatherBtn {
-        border-color: black;
-        border-width: 2px;
-        border-radius: 7px;
-        padding: 4px 10px;
-        background-color: rgb(0 0 0 / 7%);
-      }
-      #weatherBox {
-        display: flex;
-        /* justify-content: space-evenly; */        
-        align-items: center;
-        border-color: black;
-        border-width: 3px;
-        border-radius: 10px;
-        margin: 25px 25px;
-        flex-direction: column;
-        max-width: 700px;
-        flex: 2 1 500px;
-      }
-      #placeholder {
-        display: flex;
-        align-items: center;
-        border-color: black;
-        border-width: 3px;
-        border-radius: 30px;
-        margin: 0px 25px;
-        flex-direction: column;
-        max-width: 50%;
-        background: linear-gradient(navy, #49b2fe);
-        font-size: 30px;
-        color: white;
-        font-weight: bold;
-      }
-      #location {
-        display: flex;
-        justify-content: center;
-        align-self: stretch;
-        text-align: center;
-        font-size: 30px;
-        font-weight: bold;
-        padding: 5px 0px;
-        background: linear-gradient(navy, #49b2fe);
-        color: white;
-        border-radius: 4px 4px 0px 0px;
-      }
-      #weatherContent {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-      }
-      #conditions {
-        display: block;
-        font-size: 18px;
-        text-align: center;
-        margin-top: 20px;
-        margin-bottom: 20px;
-        margin-right: 10px;
-      }
-      #weatherGif {
-        margin-top: 10px;
-        max-height: 160px;
-      }
-      #wind {
-        margin-top: 14px;
-        margin-bottom: 14px;
-      }
-      #conditionsDescription {
-        margin-top: 14px;
-      }
 
-      #fishBox {
-        display: flex;
-        flex-direction: column;
-        max-width: 375px;
-        align-items: center;
-        border: 3px solid black;
-        margin: 25px;
-        border-radius: 7px;
-      }
+<head>
+  <title>MidWest Morning</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" type="text/css" href="./style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/dayjs@1.11.3/dayjs.min.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
 
-      #fishHeader {
-        text-align: center;
-        background: linear-gradient(navy, #49b2fe);
-        color: white;
-        font-size: 30px;
-        font-weight: bold;
-        margin-bottom: 10px;
-        padding: 5px;
-        align-self: stretch;
-      }
+<body>
+  <header>
+    <div id="topRow" class="">
+      <img id="Logo" class="" src="./assets/Screenshot 2024-02-01 213809.png" alt="OPE.com Logo"></img>
+      <p class="" id="dayAndTime"></p>
+      <p class="" id="dadJoke"></p>
+      <button class="" id="dadJokeBtn">Heard It</button>
+    </div>
+  </header>
+  <!-- <p style="background-image: url(./assets/background\ option.jpg);"></p> -->
 
-      #fishName {
-        text-transform: capitalize;
-      }
-
-      #fishPic {
-        height: 187px;
-        width: auto;
-      }
-
-      .fishButton {
-        background-color: skyblue;
-        text-align: center;
-        border: 2px solid black;
-        border-radius: 3px;
-        margin-bottom: 3px;
-      }
-
-      .fishButton:hover {
-        background-color: #49b2fe;
-      }
-
-      .fishButton:active{
-        background-color: blue;
-        color: white;
-      }
-
-      #mayoModule{
-        border: 3px solid black;
-        max-width: 375px;
-        margin: 25px;
-        border-radius: 7px;
-      }
-      
-      #mayoHeader{
-        text-align: center;
-        background: linear-gradient(navy, #49b2fe);
-        color: white;
-        font-size: 30px;
-        font-weight: bold;
-        margin-bottom: 10px;
-        padding: 5px;
-      }
-      
-      #mayoBox{
-        display: flex;
-        align-items: center;
-        width: 350px;
-        padding: 0px 20px;
-        
-      }
-      .mayo_cards img {
-        max-height: 220px;
-      }
-      .mayo_cards {
-        width: 100%;
-
-      }
-      .slide {
-        flex-direction: column;
-        align-items: center;
-      }
-/*
-      .mayo_cards {
-        position: relative;
-        max-width: 800px;
-        margin: auto;
-    
-      }
-  
-      .slide {
-        display: flex;
-        flex-direction: column;
-        padding-bottom: 3px;
-        width: 250px;
-        }
-*/
-      .mayo_text {
-        background-color: rgba(0, 0, 0, 0.5);
-        color: white;
-        width: 100%;
-        padding: 3px;
-        border-radius: 5px;
-        font-size: 18px;
-        display: block;
-        margin: auto;
-        text-align: center;
-      }
-
-      .prev, .next {
-        cursor: pointer;
-        border: none;
-        font-size: 30px;
-        background-color: transparent;
-      }
-
-      a {
-        font-size: 20px;
-        color: white;
-        display: flex;
-        justify-content: center;
-      }
-      a:link {
-        text-decoration: none;
-      }
-      a:visited {
-        text-decoration: none;
-      }
-      a:hover {
-        text-decoration: underline;
-      }
-      a:active {
-        text-decoration: underline;
-      } 
-      #cityInputField {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-      }
-      #allModules{
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: space-around;
-      }
-    </style>
-    <section id="weather">
-      <!-- ###TODO Accept user input as city or Zip code -->
-      <!-- ###TODO remove form element and add local Storage -->
-      <div id="cityInputField">
-      <label for="city">Enter City:</label>
-      <input type="text" id="city" name="city" required> 
+  <section id="weather">
+    <!-- ###TODO Accept user input as city or Zip code -->
+    <!-- ###TODO remove form element and add local Storage -->
+    <div id="cityInputField">
+      <!-- <label for="city">Enter City:</label> -->
+      <input type="text" id="city" name="city" required placeholder="Enter City">
       <button id="weatherBtn" onclick="saveCity(); getWeatherAPI()">Search</button>
-      </div>
-    </section>
-    <div id="allModules">
-    <h2 id="placeholder" style="display: flex;">placeholder</h2>
+    </div>
+  </section>
+  <div id="allModules">
+    <h2 id="placeholder" style="display: flex;">Enter A City In Search Bar To See Current Weather Conditions!</h2>
     <section id="weatherBox" style="display: none;">
       <h2 id="location">location and time</h2>
       <div id="weatherContent">
-      <ul id="conditions">
-        <li id="temperature">temperature</li>
-        <li id="wind">wind speed</li>
-        <li id="humidity">humidity</li>
-        <li id="conditionsDescription">description</li>
-        <li><img></li>
-      </ul>
-      <p><img id="weatherGif" src=""><img></p>
+        <ul id="conditions">
+          <li id="temperature">temperature</li>
+          <li id="wind">wind speed</li>
+          <li id="humidity">humidity</li>
+          <li id="conditionsDescription">description</li>
+          <li><img></li>
+        </ul>
+        <p><img id="weatherGif" src=""><img></p>
       </div>
     </section>
     <section id="fishBox">
       <h3 id="fishHeader">Catch of the Day</h3>
       <img id="fishPic" src="./assets/fishies/fish on.gif"><img>
       <p id="fishName">Can you score?</p>
-      <button class="fishButton" onclick="getFishAPI()">Go Fishing</button>
+      <button class="fishButton" onclick="getFishAPI()">Reel It In!</button>
     </section>
     <section id="mayoModule">
       <h3 id="mayoHeader">Mayo Price Tracker</h3>
       <div id="mayoBox">
-          <button class="prev" onclick="changeSlide(-1)">⬅️</button>
-          <div class="mayo_cards">
-              <div class="slide">
-                  <img src="./assets/mayo_pics/Hellmans.png" alt="Hellman's Mayo">
-                  <div class="mayo_text">
-                      <p>Hellman's Mayonnaise</p>
-                      <a
-                          href="https://www.target.com/p/hellmann-s-mayonnaise-real-30oz/-/A-13028016#lnk=sametab">$6.19</a>
-                  </div>
-              </div>
-
-              <div class="slide">
-                  <img src="./assets/mayo_pics/Dukes_30oz.png" alt="Dukes Mayo">
-                  <div class="mayo_text">
-                      <p>Duke's Mayonnaise</p>
-                      <a
-                          href="https://www.target.com/p/duke-39-s-real-smooth-38-creamy-mayonnaise-30-fl-oz/-/A-14776644#lnk=sametab">$4.99</a>
-                  </div>
-              </div>
-
-              <div class="slide">
-                  <img src="./assets/mayo_pics/Kraft_Mayo.png" alt="Kraft Mayo">
-                  <div class="mayo_text">
-                      <p>Kraft Real Mayonnaise</p>
-                      <a
-                          href="https://www.target.com/p/kraft-real-mayonnaise-30-fl-oz/-/A-12946394#lnk=sametab">$4.99</a>
-                  </div>
-              </div>
-
-              <div class="slide">
-                  <img src="./assets/mayo_pics/Market_Pantry_30oz.png" alt="Market Pantry Mayo">
-                  <div class="mayo_text">
-                      <p>Market Pantry Mayo</p>
-                      <a
-                          href="https://www.target.com/p/mayonnaise-30oz-market-pantry-8482/-/A-13007982#lnk=sametab">$3.39</a>
-                  </div>
-              </div>
-
-
+        <button class="prev" onclick="changeSlide(-1)">⬅️</button>
+        <div class="mayo_cards">
+          <div class="slide">
+            <img src="./assets/mayo_pics/Hellmans.png" alt="Hellman's Mayo">
+            <div class="mayo_text">
+              <p>Hellman's Mayonnaise</p>
+              <a href="https://www.target.com/p/hellmann-s-mayonnaise-real-30oz/-/A-13028016#lnk=sametab">$6.19</a>
+            </div>
           </div>
 
-          <button class="next" onclick="changeSlide(1)">➡️</button>
+          <div class="slide">
+            <img src="./assets/mayo_pics/Dukes_30oz.png" alt="Dukes Mayo">
+            <div class="mayo_text">
+              <p>Duke's Mayonnaise</p>
+              <a
+                href="https://www.target.com/p/duke-39-s-real-smooth-38-creamy-mayonnaise-30-fl-oz/-/A-14776644#lnk=sametab">$4.99</a>
+            </div>
+          </div>
+
+          <div class="slide">
+            <img src="./assets/mayo_pics/Kraft_Mayo.png" alt="Kraft Mayo">
+            <div class="mayo_text">
+              <p>Kraft Real Mayonnaise</p>
+              <a href="https://www.target.com/p/kraft-real-mayonnaise-30-fl-oz/-/A-12946394#lnk=sametab">$4.99</a>
+            </div>
+          </div>
+
+          <div class="slide">
+            <img src="./assets/mayo_pics/Market_Pantry_30oz.png" alt="Market Pantry Mayo">
+            <div class="mayo_text">
+              <p>Market Pantry Mayo</p>
+              <a href="https://www.target.com/p/mayonnaise-30oz-market-pantry-8482/-/A-13007982#lnk=sametab">$3.39</a>
+            </div>
+          </div>
+
+
+        </div>
+
+        <button class="next" onclick="changeSlide(1)">➡️</button>
       </div>
-  </section>
+    </section>
   </div>
-    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-    <script src="script.js"></script>
-  </body>
+  <style>
+    body {
+      background-image: url(./assets/background\ option5.jpg);
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: top;
+    }
+    #allModules {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-around;
+    }
+
+    #topRow {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-evenly;
+      font-size: 18px;
+      background: linear-gradient(#87ceeb, #ebf3f6);
+    }
+
+    #Logo {
+      /* background-color: white; */
+      border-radius: 20px;
+      margin: 10px 20px 10px 25px;
+      width: 125px;
+    }
+
+    #dadJokeBtn {
+      justify-self: right;
+      border-color: black;
+      border-width: 2px;
+      margin-right: 25px;
+      border-radius: 10px;
+      font-size: 15px;
+      padding: 4px 9px;
+      /* background-color: rgb(135 206 235 / 20%); */
+      background-color: rgb(0 0 0 / 7%);
+    }
+
+    #dadJokeBtn:hover {
+      background: linear-gradient(#49b2fe, navy);
+      color: white;
+    }
+
+    #dadJoke {
+      max-width: 40%;
+    }
+
+    #weather {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      /* background: linear-gradient(white, skyblue); */
+      font-size: 20px;
+      height: 90px;
+    }
+
+    #city {
+      border-radius: 10px;
+      margin: 4px 15px;
+      border-color: black;
+      border-width: 2px;
+      border-radius: 7px;
+      padding: 4px 10px;
+      /* max-width: 20%; */
+    }
+
+    #weatherBtn {
+      border-color: black;
+      border-width: 2px;
+      border-radius: 7px;
+      padding: 4px 10px;
+      background-color: rgb(0 0 0 / 7%);
+      margin: 4px;
+    }
+    #weatherBtn:hover {
+      background: linear-gradient(#49b2fe, navy);
+      color: white;
+    }
+
+    #weatherBox {
+      display: flex;
+      /* justify-content: space-evenly; */
+      align-items: center;
+      border-color: black;
+      border-width: 3px;
+      border-radius: 10px;
+      margin: 25px 25px;
+      flex-direction: column;
+      max-width: 700px;
+      flex: 2 1 500px;
+    }
+
+    #placeholder {
+      display: flex;
+      align-items: center;
+      border-color: black;
+      border-width: 3px;
+      border-radius: 10px;
+      margin: 25px;
+      flex-direction: column;
+      max-width: 30%;
+      background: linear-gradient(navy, #49b2fe);
+      font-size: 30px;
+      color: white;
+      font-weight: bold;
+      text-align: center;
+      justify-content: center;
+    }
+
+    #location {
+      display: flex;
+      justify-content: center;
+      align-self: stretch;
+      text-align: center;
+      font-size: 30px;
+      font-weight: bold;
+      padding: 5px 0px;
+      background: linear-gradient(navy, #49b2fe);
+      color: white;
+      border-radius: 4px 4px 0px 0px;
+    }
+
+    #weatherContent {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+
+    #conditions {
+      display: block;
+      font-size: 18px;
+      text-align: center;
+      margin-top: 20px;
+      margin-bottom: 20px;
+      margin-right: 10px;
+      background-color: rgba(0, 0, 0, 0.5);
+      border-radius: 5px;
+      color: white;
+      padding: 5px;
+    }
+
+    #weatherGif {
+      margin-top: 10px;
+      max-height: 160px;
+    }
+
+    #wind {
+      margin-top: 14px;
+      margin-bottom: 14px;
+    }
+
+    #conditionsDescription {
+      margin-top: 14px;
+    }
+
+    #fishBox {
+      display: flex;
+      flex-direction: column;
+      max-width: 375px;
+      align-items: center;
+      border: 3px solid black;
+      margin: 25px;
+      border-radius: 7px;
+      background-color: whitesmoke;
+    }
+
+    #fishHeader {
+      text-align: center;
+      background: linear-gradient(navy, #49b2fe);
+      color: white;
+      font-size: 30px;
+      font-weight: bold;
+      margin-bottom: 10px;
+      padding: 5px;
+      align-self: stretch;
+    }
+
+    #fishName {
+      text-transform: capitalize;
+      margin: 5px;
+    }
+
+    #fishPic {
+      height: 187px;
+      width: auto;
+    }
+
+    .fishButton {
+      background-color: rgb(0 0 0 / 15%);
+      text-align: center;
+      border: 2px solid black;
+      border-radius: 3px;
+      margin-bottom: 3px;
+      padding: 0px 5px;
+    }
+
+    .fishButton:hover {
+      background: linear-gradient(#49b2fe, navy);
+      color: white;
+    }
+
+    #mayoModule {
+      border: 3px solid black;
+      max-width: 375px;
+      margin: 25px;
+      border-radius: 7px;
+    }
+
+    #mayoHeader {
+      text-align: center;
+      background: linear-gradient(navy, #49b2fe);
+      color: white;
+      font-size: 30px;
+      font-weight: bold;
+      margin-bottom: 10px;
+      padding: 5px;
+    }
+
+    #mayoBox {
+      display: flex;
+      align-items: center;
+      width: 350px;
+      padding: 0px 20px;
+
+    }
+
+    .mayo_cards img {
+      max-height: 220px;
+    }
+
+    .mayo_cards {
+      width: 100%;
+
+    }
+
+    .slide {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .mayo_text {
+      background-color: rgba(0, 0, 0, 0.5);
+      color: white;
+      width: 100%;
+      padding: 3px;
+      border-radius: 5px;
+      font-size: 18px;
+      display: block;
+      margin: auto;
+      text-align: center;
+    }
+
+    .prev,
+    .next {
+      cursor: pointer;
+      border: none;
+      font-size: 30px;
+      background-color: transparent;
+    }
+
+    a {
+      font-size: 20px;
+      color: white;
+      display: flex;
+      justify-content: center;
+    }
+
+    a:link {
+      text-decoration: none;
+    }
+
+    a:visited {
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    a:active {
+      text-decoration: underline;
+    }
+
+    #cityInputField {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+      
+    }
+  </style>
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="script.js"></script>
+</body>
+
 </html>
