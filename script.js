@@ -176,32 +176,11 @@ var weatherPlaceholder = document.getElementById("placeholder");
         });
 
 
-//         .then(function(coords){
-                        
-//             const queryLakeURL = "http://services.dnr.state.mn.us/api/lakefinder/by_point/v1/?lat=47.4736&lon=-94.8803&radius=16093.44";
-
-//             console.log(queryLakeURL);
-
-//             fetch(queryLakeURL)
-//             .then(function(response2) {
-//                 //console.log(response2);
-//                 return response2.json();
-                
-//             })
-//             .then(function (data2){
-//                 console.log(data2)  
-                
-//                 let 
-                
-//             })
-
-//         });
-
         
  }
 
  function getFishAPI() {
-    const queryLakeURL = "http://services.dnr.state.mn.us/api/lakefinder/by_point/v1/?lat=47.4736&lon=-94.8803&radius=16093.44";
+    const queryLakeURL = "https://services.dnr.state.mn.us/api/lakefinder/by_point/v1/?lat=47.4736&lon=-94.8803&radius=16093.44";
 
     fetch(queryLakeURL)
     .then(function(response2){
