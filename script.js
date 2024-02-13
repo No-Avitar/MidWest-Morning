@@ -52,6 +52,25 @@ $(document).ready(function(){
     getWeatherAPI();
 });
 
+var heardItButton = document.getElementById("dadJokeBtn")
+heardItButton.addEventListener("click", function(){
+    $.ajax({
+        method: 'GET',
+        url: 'https://api.api-ninjas.com/v1/dadjokes?limit=' + limit,
+        headers: { 'X-Api-Key': dJKey },
+        contentType: 'application/json',
+        success: function (result) {
+            //console.log(result);
+            dJEl.textContent = result[0].joke;
+        },
+        error: function ajaxError(jqXHR) {
+            console.error('Error: ', jqXHR.responseText);
+        }
+    
+    });
+}
+)
+
 // ##################################
 //## WEATHER API PULL FUNCTIONALITY ##
 // ##################################
