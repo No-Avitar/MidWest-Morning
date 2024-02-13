@@ -13,14 +13,17 @@
         <div id="topRow" class="">
             <img id="Logo" class="" src="./assets/Screenshot 2024-02-01 213809.png" alt="OPE.com Logo"></img>
             <p class="" id="dayAndTime"></p>
-            <p class="" id="dadJoke"></p><button class="" id="dadJokeBtn">Heard It</button>
+            <p class="" id="dadJoke"></p>
+            <button class="" id="dadJokeBtn">Heard It</button>
         </div>
     </header>
     <style>
       #topRow {
         display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
         align-items: center;
-        justify-content: space-between;
+        justify-content: space-evenly;
         font-size: 18px;
         background: linear-gradient(skyblue, white);
       }
@@ -36,7 +39,7 @@
         border-width: 2px;
         margin-right: 25px;
         border-radius: 10px;
-        font-size: 22px;
+        font-size: 15px;
         padding: 4px 9px;
         /* background-color: rgb(135 206 235 / 20%); */
         background-color: rgb(0 0 0 / 7%);
@@ -58,7 +61,7 @@
         border-color: black;
         border-width: 2px;
         border-radius: 7px;
-        padding: 4px 10px;
+        /* padding: 4px 10px; */
       }
       #weatherBtn {
         border-color: black;
@@ -69,14 +72,15 @@
       }
       #weatherBox {
         display: flex;
-        justify-content: space-evenly;
+        /* justify-content: space-evenly; */        
         align-items: center;
         border-color: black;
         border-width: 3px;
         border-radius: 10px;
-        margin: 0px 25px;
+        margin: 25px 25px;
         flex-direction: column;
-        max-width: 50%;
+        max-width: 700px;
+        flex: 2 1 500px;
       }
       #placeholder {
         display: flex;
@@ -94,7 +98,7 @@
       }
       #location {
         display: flex;
-        /* justify-content: center; */
+        justify-content: center;
         align-self: stretch;
         text-align: center;
         font-size: 30px;
@@ -196,7 +200,7 @@
       #mayoBox{
         display: flex;
         align-items: center;
-        width: 100%;
+        width: 350px;
         padding: 0px 20px;
         
       }
@@ -263,18 +267,26 @@
       a:active {
         text-decoration: underline;
       } 
+      #cityInputField {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+      }
       #allModules{
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
+        justify-content: space-around;
       }
     </style>
     <section id="weather">
       <!-- ###TODO Accept user input as city or Zip code -->
       <!-- ###TODO remove form element and add local Storage -->
+      <div id="cityInputField">
       <label for="city">Enter City:</label>
       <input type="text" id="city" name="city" required> 
       <button id="weatherBtn" onclick="saveCity(); getWeatherAPI()">Search</button>
+      </div>
     </section>
     <div id="allModules">
     <h2 id="placeholder" style="display: flex;">placeholder</h2>
@@ -332,7 +344,7 @@
               <div class="slide">
                   <img src="./assets/mayo_pics/Market_Pantry_30oz.png" alt="Market Pantry Mayo">
                   <div class="mayo_text">
-                      <p>Market Pantry Mayonnaise</p>
+                      <p>Market Pantry Mayo</p>
                       <a
                           href="https://www.target.com/p/mayonnaise-30oz-market-pantry-8482/-/A-13007982#lnk=sametab">$3.39</a>
                   </div>
