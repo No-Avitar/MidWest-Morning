@@ -8,6 +8,10 @@
   <link rel="stylesheet" type="text/css" href="./style.css" />
   <script src="https://cdn.jsdelivr.net/npm/dayjs@1.11.3/dayjs.min.js"></script>
   <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="apple-touch-icon" sizes="180x180" href="./assets/favicon_io/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon_io/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="./assets/favicon_io/favicon-16x16.png">
+  <link rel="manifest" href="./assets/favicon_io/site.webmanifest">
 </head>
 
 <body>
@@ -131,7 +135,6 @@
       justify-self: right;
       border-color: black;
       border-width: 2px;
-      margin-right: 25px;
       border-radius: 10px;
       font-size: 15px;
       padding: 4px 9px;
@@ -145,7 +148,8 @@
     }
 
     #dadJoke {
-      max-width: 40%;
+      max-width: 700px;
+      text-align: center;
     }
 
     #weather {
@@ -227,13 +231,14 @@
       display: flex;
       flex-direction: row;
       flex-wrap: wrap;
+      justify-content: center;
     }
 
     #conditions {
       display: block;
       font-size: 18px;
       text-align: center;
-      margin-top: 20px;
+      margin-top: 10px;
       margin-bottom: 20px;
       margin-right: 10px;
       background-color: rgba(0, 0, 0, 0.5);
@@ -265,6 +270,7 @@
       margin: 25px;
       border-radius: 7px;
       background-color: whitesmoke;
+      min-height: 350px;
     }
 
     #fishHeader {
