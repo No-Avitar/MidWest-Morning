@@ -1,3 +1,7 @@
+//     ###################################
+//###### FUNCTIONS TO CHANGE SLIDE INDEX ######
+//     ###################################
+
 let slideIndex = 0;
 const slides = document.querySelectorAll('.slide');
 
@@ -21,6 +25,7 @@ setInterval(autoChangeSlide, 5000);
 
 showSlide(slideIndex);
 
+//DAY AND TIME FROM JQUERY
 
 $('#dayAndTime').text(dayjs().format('dddd, MMMM D, h:mm A'))
 
@@ -47,10 +52,14 @@ $.ajax({
 
 });
 
+//USING LOCAL STORAGE TO PULL WEATHER API ON PAGE LOAD
+
 $(document).ready(function(){
     city = localStorage.getItem("userCity");
     getWeatherAPI();
 });
+
+//FUNCTIONALITY FOR HEARD IT BUTTON
 
 var heardItButton = document.getElementById("dadJokeBtn")
 heardItButton.addEventListener("click", function(){
@@ -71,9 +80,9 @@ heardItButton.addEventListener("click", function(){
 }
 )
 
-// ##################################
-//## WEATHER API PULL FUNCTIONALITY ##
-// ##################################
+//    #######################################
+//##### STORING USER INPUT IN LOCAL STORAGE #####
+//    #######################################
 
 var APIKey = "79c8885bec0fbdcd642a8ba60c566561";
 var city;
@@ -89,6 +98,10 @@ function saveCity() {
         alert("Please enter a valid city");
     }
 };
+
+//    ##################################
+//##### WEATHER API PULL FUNCTIONALITY #####
+//    ##################################
 
 function getWeatherAPI() {
 
@@ -178,6 +191,10 @@ var weatherPlaceholder = document.getElementById("placeholder");
 
         
  }
+
+//    ##################################
+//##### MN DNR API PULL FUNCTIONALITY  #####
+//    ##################################
 
  function getFishAPI() {
     const queryLakeURL = "https://services.dnr.state.mn.us/api/lakefinder/by_point/v1/?lat=47.4736&lon=-94.8803&radius=16093.44";
